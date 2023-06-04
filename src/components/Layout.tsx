@@ -1,3 +1,5 @@
+import { PropsWithChildren } from "react";
+
 type SplitLayoutProps = {
 	direction?: "vertical" | "horizontal";
 	base?: "first" | "second";
@@ -6,7 +8,7 @@ type SplitLayoutProps = {
 	max?: string;
 } & Record<string, unknown>;
 
-export const SplitLayout: React.FunctionComponent<SplitLayoutProps> = ({ direction = "vertical", base = "first", size, min, max, children, ...other }) => {
+export const SplitLayout: React.FC<PropsWithChildren<SplitLayoutProps>> = ({ direction = "vertical", base = "first", size, min, max, children, ...other }) => {
 	if (!Array.isArray(children) || children.length !== 2) {
 		console.error("Layout must contain 2 children");
 		return null;
@@ -66,7 +68,7 @@ type CenterLayoutProps = {
 	maxHeight?: string,
 } & Record<string, unknown>;
 
-export const CenterLayout: React.FunctionComponent<CenterLayoutProps> = ({
+export const CenterLayout: React.FC<PropsWithChildren<CenterLayoutProps>> = ({
 	width, height, minWidth, maxWidth, minHeight, maxHeight, children, ...other
 }) => {
 	const heightAfterMin = minHeight ? `max( ${height} , ${minHeight} )` : height;
@@ -99,7 +101,7 @@ type AnyProps = {
 	style?: Record<string, unknown>
 } & Record<string, unknown>
 
-export const BoxLayout: React.FunctionComponent<AnyProps> = ({ style, children, ...other }) => {
+export const BoxLayout: React.FC<PropsWithChildren<AnyProps>> = ({ style, children, ...other }) => {
 	return (
 		<div style={{
 			...style,
@@ -111,7 +113,7 @@ export const BoxLayout: React.FunctionComponent<AnyProps> = ({ style, children, 
 	);
 };
 
-export const WindowLayout: React.FunctionComponent<AnyProps> = ({ style, children, ...other }) => {
+export const WindowLayout: React.FC<PropsWithChildren<AnyProps>> = ({ style, children, ...other }) => {
 	//console.log(other);
 	return (
 		<div style={{

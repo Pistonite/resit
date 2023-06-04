@@ -237,7 +237,7 @@ function compressedStringToItem(str: CompressedDeltaItemString, inverseItemMap: 
 export function typeToOperator(type: DeltaType, value: string | number): [DeltaOperator, string | number] {
 	switch (type) {
 		case "add":
-			if (value >= 0) {
+			if ((value as number) >= 0) {
 				return ["+", value];
 			} else {
 				return ["-", -value];

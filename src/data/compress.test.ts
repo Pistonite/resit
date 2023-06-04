@@ -1,6 +1,5 @@
 import { RouteState } from "store/routing/type";
 import { encodeLengthPrepended, decodeLengthPrepended, encodeBoolean, decodeBoolean, encodeArray, decodeArray, decompressState, compressState, deflateCompressedState, inflateEncodedState } from "./compress";
-import { compressedStringToDelta } from "./delta";
 import { deflateRouteState, inflateRouteData } from "./storage";
 
 const routeState: RouteState = {
@@ -85,11 +84,11 @@ describe("data/compress", () => {
 		});
 		it("should decode error", () => {
 			const encoded = "abc";
-			let [str, index, error] = decodeLengthPrepended(encoded, 0);
+			let [_str, _index, error] = decodeLengthPrepended(encoded, 0);
 			expect(error).not.toBeNull();
-			[str, index, error] = decodeLengthPrepended("10:a", 0);
+			[_str, _index, error] = decodeLengthPrepended("10:a", 0);
 			expect(error).not.toBeNull();
-			[str, index, error] = decodeLengthPrepended("a:a", 0);
+			[_str, _index, error] = decodeLengthPrepended("a:a", 0);
 			expect(error).not.toBeNull();
 		});
 	});

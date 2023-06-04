@@ -1,0 +1,112 @@
+.component {
+  box-sizing: border-box;
+}
+
+.overflow-auto{
+  overflow: auto;
+}
+
+.overflow-hidden{
+  overflow: hidden;
+}
+
+.border {
+  border: 2px #eee groove;
+}
+
+.header-border{
+  border-bottom: 1px solid black;
+}
+
+
+.float-right{
+  float: right;
+}
+
+.icon-button{
+  display: inline-block;
+  width: 1.5rem;
+  vertical-align: middle;
+}
+
+.icon-button-width{
+  width: 1.5rem;
+}
+
+.vertical-center {
+  vertical-align: middle;
+}
+
+.full-height{
+  height: 100%;
+}
+
+.full-width{
+  width:100%;
+}
+
+.action-name-width{
+  width:15rem;
+}
+
+input.full-width {
+  box-sizing: border-box;
+}
+
+.margin-small {
+  margin: 0.5rem;
+}
+
+.space-left-small{
+  margin-left:0.5rem;
+}
+.space-left-large{
+  margin-left:15rem;
+}
+
+table {
+  width:100%;
+}
+
+h3 {
+  margin: 0.2rem 0.5rem;
+  /* float:left; */
+}
+
+iframe{
+  border:none;
+}
+
+.split-link{
+  color: blue;
+  cursor: pointer;
+}
+
+.align-right{
+  text-align: right;
+}
+
+.item-span{
+  padding:0 0.2rem;
+}
+
+.deltastr-error{
+  background-color: rgb(255, 121, 121);
+}
+
+p{
+  margin: 0.5rem;
+}
+
+.help-doc {
+  padding: 0.5rem;
+}
+.action-note-spacer{
+  height: 0.5rem;
+  width: 100%;
+}
+
+.cursor-pointer{
+  cursor: pointer
+}
+

@@ -1,4 +1,5 @@
 # This Workflow builds a webapp with npm and deploys it to pages on version tags
+# assumes building to the "dist" directory
 
 name: Simple Web App CI
 
@@ -27,7 +28,7 @@ jobs:
     - name: Build | Upload Artifact
       uses: actions/upload-pages-artifact@v1.0.4
       with:
-        path: build
+        path: dist
         retention-days: 30
 
   deploy:
